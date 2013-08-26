@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="iMr-Gp-0Ff">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="MpJ-gW-zCU">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="540"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="linearBG-overlay.png" id="3B9-M0-1mT">
+                                        <rect key="frame" x="-150" y="-200" width="540" height="540"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="bottom" image="linearBG.png" id="oly-1C-lvJ">
+                                        <rect key="frame" x="-150" y="-200" width="540" height="689"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="umy-9Q-Sw4">
+                                        <rect key="frame" x="0.0" y="176" width="320" height="152"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="2" id="DfC-4v-11C"/>
+                                        </connections>
+                                    </mapView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="You have x favorite artists." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t5P-Pn-2rP">
+                                        <rect key="frame" x="20" y="83" width="280" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="favoriteMap" destination="umy-9Q-Sw4" id="4cf-hq-vtt"/>
+                        <outlet property="favoritesLabel" destination="t5P-Pn-2rP" id="HBE-lf-U5N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-257" y="10"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="2Yf-sN-jGA">
+            <objects>
+                <viewController id="RzN-R8-3au" customClass="MapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T3M-t8-H1L">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="City Map" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="taD-Ih-bYY">
+                                <rect key="frame" x="126" y="20" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="vlZ-iQ-fho">
+                                <rect key="frame" x="0.0" y="59" width="320" height="440"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="RzN-R8-3au" id="uqp-Ao-wFL"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="cityMap" destination="vlZ-iQ-fho" id="S2N-C9-7Ch"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r72-zR-apF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="148" y="10"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gQ5-Wz-zsk">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="iMr-Gp-0Ff" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b37-6y-R7h">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="afy-vI-4tS" kind="relationship" relationship="rootViewController" id="wmH-Rt-uT1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ARD-F2-Gbs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-461" y="683"/>
+        </scene>
+        <!--Artist View Controller-->
+        <scene sceneID="TB7-rk-O0E">
+            <objects>
+                <viewController id="afy-vI-4tS" customClass="ArtistViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IgY-xF-Xg9">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="linearBG.png" id="j3z-UU-grL">
+                                <rect key="frame" x="-86" y="-114" width="406" height="621"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Artists " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yM0-IT-oxs">
+                                <rect key="frame" x="50" y="4" width="280" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" red="0.74901960779999999" green="0.1843137255" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="16N-Js-sgh">
+                                <rect key="frame" x="0.0" y="53" width="320" height="402"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="CellID" id="Dag-fN-Zam" customClass="ArtistCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ArtistTableCell.png" id="I69-67-KgH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T4m-u9-sZ0">
+                                                    <rect key="frame" x="20" y="2" width="247" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Juk-uF-c2M">
+                                                    <rect key="frame" x="20" y="20" width="124" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="mediumLabel" destination="Juk-uF-c2M" id="r2f-uF-2qw"/>
+                                            <outlet property="studioNameLabel" destination="T4m-u9-sZ0" id="iuQ-1S-TDC"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="afy-vI-4tS" id="QIs-mH-bJX"/>
+                                    <outlet property="delegate" destination="afy-vI-4tS" id="amh-rf-1S4"/>
+                                </connections>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="qIh-Qr-Z3D">
+                                <rect key="frame" x="0.0" y="461" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                <segments>
+                                    <segment title="Name"/>
+                                    <segment title="media"/>
+                                    <segment title="location"/>
+                                </segments>
+                                <color key="tintColor" red="0.74901960779999999" green="0.1843137255" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="T9i-uQ-xfN"/>
+                    <connections>
+                        <outlet property="artistsTable" destination="16N-Js-sgh" id="AXP-fw-sfw"/>
+                        <outlet property="sortSegment" destination="qIh-Qr-Z3D" id="dYI-PY-z03"/>
+                        <outlet property="titleLabel" destination="yM0-IT-oxs" id="1M2-cJ-4xa"/>
+                        <segue destination="uOT-Vf-RpM" kind="push" identifier="segueToArtistDetail" id="gVE-Ev-dRV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="htL-xV-NUa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="51" y="683"/>
+        </scene>
+        <!--Artist Detail View Controller-->
+        <scene sceneID="Kr6-4n-wrK">
+            <objects>
+                <viewController id="uOT-Vf-RpM" customClass="ArtistDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VPb-Vf-mng">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="gLc-h7-uuu">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Artist Detail: images, blurb. links" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="42j-rV-9wU">
+                                        <rect key="frame" x="20" y="5" width="280" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <color key="textColor" red="0.74901960779999999" green="0.1843137255" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="6i5-LA-qmN">
+                                        <rect key="frame" x="20" y="63" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Blurb: potentially do this programatically, and set height by line " lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bcu-DL-bDl">
+                                        <rect key="frame" x="178" y="63" width="122" height="150"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cVq-vB-Fel">
+                                        <rect key="frame" x="20" y="221" width="280" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="lorem ipsum something to keep">
+                                            <color key="titleColor" red="0.74901960779999999" green="0.1843137255" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="favoriteButton:" destination="uOT-Vf-RpM" eventType="touchUpInside" id="YjE-oj-vom"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aFg-6a-3MZ">
+                                        <rect key="frame" x="20" y="272" width="280" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="the text boxes longer so that they">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="visitWebsiteButton:" destination="uOT-Vf-RpM" eventType="touchUpInside" id="JDn-Ex-AmN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zw9-Yb-ZIh">
+                                        <rect key="frame" x="20" y="323" width="280" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="don't get truncated, which is odd?">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="contactArtistButton:" destination="uOT-Vf-RpM" eventType="touchUpInside" id="dG4-TJ-gKH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mOO-Sc-d5V"/>
+                    <connections>
+                        <outlet property="artImage" destination="6i5-LA-qmN" id="JNp-gl-auJ"/>
+                        <outlet property="artistDetailLabel" destination="42j-rV-9wU" id="aaQ-JS-2Tc"/>
+                        <outlet property="blurbLabel" destination="Bcu-DL-bDl" id="NU7-uM-HdV"/>
+                        <outlet property="contactArtistButtonOutlet" destination="Zw9-Yb-ZIh" id="wu8-Y2-iNC"/>
+                        <outlet property="favoriteButtonOutlet" destination="cVq-vB-Fel" id="cMe-oN-GtO"/>
+                        <outlet property="studioNameLabel" destination="42j-rV-9wU" id="EEm-vB-UBT"/>
+                        <outlet property="visitWebsiteButtonOutlet" destination="aFg-6a-3MZ" id="N3j-ME-dpK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NdT-Uj-ITc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="618" y="667"/>
+        </scene>
+        <!--Map Detail View Controller-->
+        <scene sceneID="s0q-LK-Fgq">
+            <objects>
+                <viewController id="QqC-qr-tuW" customClass="MapDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lze-ZG-8BL">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tent Map" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aVg-80-z3X">
+                                <rect key="frame" x="124" y="20" width="72" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="jVQ-CK-lgp">
+                                <rect key="frame" x="0.0" y="72" width="320" height="440"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="QqC-qr-tuW" id="xCH-DA-Loe"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tentMap" destination="jVQ-CK-lgp" id="6jr-HR-se0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7pb-wN-zf7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="626" y="-4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ArtistTableCell.png" width="320" height="44"/>
+        <image name="linearBG-overlay.png" width="542" height="542"/>
+        <image name="linearBG.png" width="542" height="542"/>
+    </resources>
+    <classes>
+        <class className="ArtistCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ArtistCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mediumLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="studioNameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ArtistDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ArtistDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="contactArtistButton:"/>
+                <relationship kind="action" name="favoriteButton:"/>
+                <relationship kind="action" name="visitWebsiteButton:"/>
+                <relationship kind="outlet" name="artImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="artistDetailLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="artistLocation" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="blurbLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="contactArtistButtonOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="favoriteButtonOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="studioNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="visitWebsiteButtonOutlet" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="ArtistViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ArtistViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="artistsTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="sortSegment" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MapDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tentMap" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cityMap" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="favoriteMap" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="favoritesLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

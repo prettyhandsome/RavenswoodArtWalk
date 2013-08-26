@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Artist" representedClassName="Artist" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="artistName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="blurb" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favorite" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="imagePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="medium" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rawLocation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sortChar" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studioName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="location" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RAWLocation" inverseName="artists" inverseEntity="RAWLocation" syncable="YES"/>
+    </entity>
+    <entity name="RAWLocation" representedClassName="RAWLocation" syncable="YES">
+        <attribute name="tent" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="artists" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Artist" inverseName="location" inverseEntity="Artist" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Artist" positionX="358" positionY="93" width="128" height="240"/>
+        <element name="RAWLocation" positionX="160" positionY="192" width="128" height="73"/>
+    </elements>
+</model>
