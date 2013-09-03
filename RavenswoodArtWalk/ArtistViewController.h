@@ -17,7 +17,6 @@
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
-@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UITableView *artistsTable;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *sortSegment;
 

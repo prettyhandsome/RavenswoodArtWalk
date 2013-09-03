@@ -16,6 +16,11 @@ static NSString *CellIdentifier = @"CellID";
 {
     NSData          *artistData;
     NSString        *sortString;
+    double          latitudeInput;
+    double          longitudeInput;
+    NSNumber        *latitude;
+    NSNumber        *longitude;
+    NSMutableArray  *artistTableArray;
 }
 
 @property (strong, nonatomic) NSFileManager                 *fileManager;
@@ -23,9 +28,12 @@ static NSString *CellIdentifier = @"CellID";
 @property (strong, nonatomic) NSFetchedResultsController    *fetchedResultsController;
 @property (strong, nonatomic) Artist                        *tappedArtist;
 
+
+
 -(void)setupArtists;
 -(void)parseArtistJSON;
 -(void)formatSegmentControl;
+-(void)lookupCoords;
 
 @end
 
@@ -43,9 +51,6 @@ static NSString *CellIdentifier = @"CellID";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    UIFont *oswald = [UIFont fontWithName:@"Oswald" size:self.titleLabel.font.pointSize];
-    self.titleLabel.font = oswald;
     
     self.fileManager =[NSFileManager defaultManager];
     self.documentDirectory = [[self.fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
@@ -159,6 +164,9 @@ static NSString *CellIdentifier = @"CellID";
     NSLog(@"setupArtists, fetchResults: %@", self.fetchedResultsController);
 }
 
+
+
+
 -(void)parseArtistJSON
 {
     self.fileManager = [NSFileManager defaultManager];
@@ -172,13 +180,10 @@ static NSString *CellIdentifier = @"CellID";
     if (artistData) {
         NSLog(@"artistData:%@", artistData);
         
-        NSDictionary *mainDict = [NSJSONSerialization JSONObjectWithData:artistData
-                                                                 options:0
-                                                                   error:nil];
+        NSDictionary *mainDict = [NSJSONSerialization JSONObjectWithData:artistData options:0 error:nil];
         
         NSMutableArray *mainArray = [mainDict objectForKey:@"artists"];
-        
-        NSMutableArray *artistTableArray = [[NSMutableArray alloc] init];
+        artistTableArray = [[NSMutableArray alloc] init];
         
         for (NSDictionary *dict in mainArray)
         {
@@ -192,16 +197,15 @@ static NSString *CellIdentifier = @"CellID";
             NSString *website = [dict objectForKey:@"link"];
             NSString *imagePath = [dict objectForKey:@"imageName"];
             
-            if (studioName != nil) {
+            if (studioName != NULL) {
                 //make case insensitive :)
-                NSLog(@"%c", [studioName characterAtIndex:0]);
+               // NSLog(@"%c", [studioName characterAtIndex:0]);
                 char alphaSort = [studioName characterAtIndex:0];
                 sortString = [NSString stringWithFormat:@"%c" , alphaSort];
                 
             } else {
                 NSLog(@"Studio name is nil?!?");
             }
-            
             
             Artist *artist = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Artist class]) inManagedObjectContext:self.managedObjectContext];
             
@@ -216,21 +220,66 @@ static NSString *CellIdentifier = @"CellID";
             artist.email = email;
             artist.imagePath = imagePath;
             
+            if (artist.address != NULL)
+            {
+                NSLog(@"%@: not null", artist.studioName);
+                
+                NSString *addressSearchString = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?address=%@&sensor=false", artist.address];
+                NSString *addressURLString = [addressSearchString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                artist.mapSearch = addressURLString;
+            }
+
             [artistTableArray addObject:artist];
         }
         
-    } else {
+    }
+        else {
         NSLog(@"Can't find file");
         return;
     }
 
     NSError *saveError = nil;
     [self.managedObjectContext save: &saveError];
-    [self setupArtists];
-    [self.artistsTable reloadData];
+ //   [self setupArtists];
+    [self lookupCoords];
+
 }
 
+-(void)lookupCoords
+{
+    for (Artist *mappedArtist in artistTableArray) {
+       
+        NSURL *url = [NSURL URLWithString:mappedArtist.mapSearch];
+        
+        if (mappedArtist.mapSearch !=nil) {
+            
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+        
+        [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error) {
+            
+            NSDictionary *resultsDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSArray *resultsArray = [resultsDictionary objectForKey:@"results"];
+            NSDictionary *mainDictionary = [resultsArray objectAtIndex:0];
+            NSDictionary *geometryDictionary = [mainDictionary objectForKey:@"geometry"];
+            NSDictionary *locationDictionary = [geometryDictionary objectForKey:@"location"];
+            
+            latitudeInput = [[locationDictionary objectForKey:@"lat"]doubleValue];
+            longitudeInput = [[locationDictionary objectForKey:@"lng"] doubleValue];
+            mappedArtist.addressLat = [NSNumber numberWithDouble:latitudeInput];
+            mappedArtist.addressLng = [NSNumber numberWithDouble:longitudeInput];
+            NSError *saveError = nil;
+            [self.managedObjectContext save: &saveError];
+            NSLog(@"for %@: lat/long:%@, %@ ", mappedArtist.studioName, mappedArtist.addressLat, mappedArtist.addressLng);
+                }];
+           
+            NSError *saveError = nil;
+            [self.managedObjectContext save: &saveError];
+        }
+        [self.artistsTable reloadData];
 
+    }
+    
+}
 #pragma mark -- TableView Setup
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -251,8 +300,6 @@ static NSString *CellIdentifier = @"CellID";
     Artist *artist = [self.fetchedResultsController objectAtIndexPath:indexPath];
     artistCell.studioNameLabel.text = artist.studioName;
     artistCell.mediumLabel.text = artist.medium;
-    
-    //tableViewCell.imageView.image = [UIImage imageNamed:person.imageName];
     
     // Configure the cell with data from the managed object.
     

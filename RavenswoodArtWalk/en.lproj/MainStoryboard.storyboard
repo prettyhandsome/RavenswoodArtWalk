@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="iMr-Gp-0Ff">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="iMr-Gp-0Ff">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -89,9 +89,15 @@
         <scene sceneID="gQ5-Wz-zsk">
             <objects>
                 <navigationController definesPresentationContext="YES" id="iMr-Gp-0Ff" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b37-6y-R7h">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackTranslucent" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackTranslucent" id="b37-6y-R7h">
+                        <rect key="frame" x="0.0" y="-44" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="cQH-fQ-cVs">
+                        <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="afy-vI-4tS" kind="relationship" relationship="rootViewController" id="wmH-Rt-uT1"/>
                     </connections>
@@ -100,26 +106,20 @@
             </objects>
             <point key="canvasLocation" x="-461" y="683"/>
         </scene>
-        <!--Artist View Controller-->
+        <!--Artist View Controller - Artists-->
         <scene sceneID="TB7-rk-O0E">
             <objects>
-                <viewController id="afy-vI-4tS" customClass="ArtistViewController" sceneMemberID="viewController">
+                <viewController title="Artists" id="afy-vI-4tS" customClass="ArtistViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IgY-xF-Xg9">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="linearBG.png" id="j3z-UU-grL">
-                                <rect key="frame" x="-86" y="-114" width="406" height="621"/>
+                                <rect key="frame" x="-86" y="-70" width="406" height="621"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Artists " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yM0-IT-oxs">
-                                <rect key="frame" x="50" y="4" width="280" height="46"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <color key="textColor" red="0.74901960779999999" green="0.1843137255" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="16N-Js-sgh">
-                                <rect key="frame" x="0.0" y="53" width="320" height="402"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="499"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -164,7 +164,7 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="qIh-Qr-Z3D">
-                                <rect key="frame" x="0.0" y="461" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="505" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <segments>
                                     <segment title="Name"/>
@@ -176,11 +176,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="T9i-uQ-xfN"/>
+                    <navigationItem key="navigationItem" title="Artists" id="T9i-uQ-xfN"/>
                     <connections>
                         <outlet property="artistsTable" destination="16N-Js-sgh" id="AXP-fw-sfw"/>
                         <outlet property="sortSegment" destination="qIh-Qr-Z3D" id="dYI-PY-z03"/>
-                        <outlet property="titleLabel" destination="yM0-IT-oxs" id="1M2-cJ-4xa"/>
                         <segue destination="uOT-Vf-RpM" kind="push" identifier="segueToArtistDetail" id="gVE-Ev-dRV"/>
                     </connections>
                 </viewController>
@@ -193,20 +192,13 @@
             <objects>
                 <viewController id="uOT-Vf-RpM" customClass="ArtistDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VPb-Vf-mng">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="gLc-h7-uuu">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="549"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Artist Detail: images, blurb. links" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="42j-rV-9wU">
-                                        <rect key="frame" x="20" y="5" width="280" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                        <color key="textColor" red="0.74901960779999999" green="0.1843137255" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="6i5-LA-qmN">
                                         <rect key="frame" x="20" y="63" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -270,11 +262,9 @@
                     <navigationItem key="navigationItem" id="mOO-Sc-d5V"/>
                     <connections>
                         <outlet property="artImage" destination="6i5-LA-qmN" id="JNp-gl-auJ"/>
-                        <outlet property="artistDetailLabel" destination="42j-rV-9wU" id="aaQ-JS-2Tc"/>
                         <outlet property="blurbLabel" destination="Bcu-DL-bDl" id="NU7-uM-HdV"/>
                         <outlet property="contactArtistButtonOutlet" destination="Zw9-Yb-ZIh" id="wu8-Y2-iNC"/>
                         <outlet property="favoriteButtonOutlet" destination="cVq-vB-Fel" id="cMe-oN-GtO"/>
-                        <outlet property="studioNameLabel" destination="42j-rV-9wU" id="EEm-vB-UBT"/>
                         <outlet property="visitWebsiteButtonOutlet" destination="aFg-6a-3MZ" id="N3j-ME-dpK"/>
                     </connections>
                 </viewController>
@@ -320,58 +310,6 @@
         <image name="linearBG-overlay.png" width="542" height="542"/>
         <image name="linearBG.png" width="542" height="542"/>
     </resources>
-    <classes>
-        <class className="ArtistCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ArtistCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mediumLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="studioNameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ArtistDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ArtistDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="contactArtistButton:"/>
-                <relationship kind="action" name="favoriteButton:"/>
-                <relationship kind="action" name="visitWebsiteButton:"/>
-                <relationship kind="outlet" name="artImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="artistDetailLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="artistLocation" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="blurbLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="contactArtistButtonOutlet" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="favoriteButtonOutlet" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="studioNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="visitWebsiteButtonOutlet" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="ArtistViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ArtistViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="artistsTable" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="sortSegment" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MapDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tentMap" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="cityMap" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="favoriteMap" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="favoritesLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -12,13 +12,14 @@
 
 @interface ArtistDetailViewController ()
 {
-    UIView  *maskView;
+    UIView          *maskView;
 
 }
 
 @property (strong, nonatomic) NSFileManager                 *fileManager;
 @property (strong, nonatomic) NSURL                         *documentDirectory;
 @property (strong, nonatomic) NSFetchedResultsController    *fetchedResultsController;
+
 
 -(void)populateSummary;
 -(void)loadImage;
@@ -44,7 +45,9 @@
     [super viewDidLoad];
     
     self.managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
-
+    
+    self.navigationController.navigationItem.title = self.selectedArtist.studioName;
+    
     [self loadImage];
     [self createImageFrame];
     [self populateSummary];
@@ -147,6 +150,7 @@
     
 }
 
+
 -(void)setInitialButtonViews
 {
    if (self.selectedArtist.website == nil)
@@ -157,7 +161,8 @@
    }
    else
    {
-    [self.visitWebsiteButtonOutlet setTitle:@"No website available for this artist" forState:UIControlStateNormal];self.visitWebsiteButtonOutlet.titleLabel.text= @"Visit Artist's Website";
+    [self.visitWebsiteButtonOutlet setTitle:@"Visit Artist's Website" forState:UIControlStateNormal];
+       //self.visitWebsiteButtonOutlet.titleLabel.text= @"Visit Artist's Website";
    }
     if (self.selectedArtist.email == nil)
     {

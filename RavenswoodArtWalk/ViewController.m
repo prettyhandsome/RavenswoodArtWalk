@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AppDelegate.h"
 
 @interface ViewController ()
 {
@@ -17,6 +18,8 @@
 }
 
 @property (strong, nonatomic) CLLocationManager *myLocationManager;
+@property (strong, nonatomic) NSFetchedResultsController    *favoritesResultsController;
+
 
 - (void)startStandardUpdates;
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations;
@@ -80,7 +83,7 @@
     
 }
 
-#pragma mark Drop a Pin for original Flickr Photo selected (location of it)
+/*#pragma mark Drop a Pin for original Flickr Photo selected (location of it)
 
 -(void) dropPinForFlickPhoto {
     
@@ -102,49 +105,100 @@
     
 }
 
--(MKAnnotationView*) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+-(void)getFavorites{
     
-    NSString *reuseIdentifier= @"reuseIdentifier";
+    NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
     
-    MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:reuseIdentifier];
+    NSFetchRequest *favoritesFetchRequest = [[NSFetchRequest alloc] init];
     
-    if ([annotation isKindOfClass:[TappedPhotoAnnotation class]]) {
-        
-        annotationView = [[TappedPhotoAnnotationView alloc] initWithAnnotation:annotation
-                                                               reuseIdentifier:reuseIdentifier];
-        annotationView.canShowCallout= YES;
-        // ((MKPinAnnotationView *)(annotationView)).animatesDrop = YES;
-        
+    NSPredicate * selectedPredicate = [NSPredicate predicateWithFormat:@"favorite = %@", 1];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Artist" inManagedObjectContext:managedObjectContext];
+    [favoritesFetchRequest setEntity:entity];
+    [favoritesFetchRequest setPredicate: selectedPredicate];
+    
+    //once Tasks save taskDetails, switch name to taskDetails
+    
+    favoritesFetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"studioName" ascending:NO],[NSSortDescriptor sortDescriptorWithKey:@"rawLocation" ascending:NO]];
+    
+    self.favoritesResultsController= [[NSFetchedResultsController alloc]
+                                    initWithFetchRequest:favoritesFetchRequest
+                                    managedObjectContext:managedObjectContext
+                                    sectionNameKeyPath:@"studioName"
+                                    cacheName:@"nil"];
+    
+    NSError *error;
+    
+    BOOL success = [self.favoritesResultsController performFetch:&error];
+    if (!success) {
+        NSLog (@"Error: %@", error.description);
     }
     
     
-    if(annotationView == nil) {
-        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
-                                                         reuseIdentifier:reuseIdentifier];
+                               for (entity in self.favoritesResultsController){
+                                   
+                                   
+                                   
+                                   
+                                   BusStops *busStop = [[BusStops alloc] init];
+                                   busStop.title = titleStopName;
+                                   busStop.subtitle = subtitleID;
+                                   busStop.coordinate = CLLocationCoordinate2DMake([latitude floatValue], [longitude floatValue]);
+                                   busStop.direction = direction;
+                                   busStop.transfers = transfers;
+                                   busStop.busID = busID;
+                                   busStop.stopID = stopID;
+                                   
+                                   //                                   if ([[busDictionary objectForKey:@"inter_modal"] isEqual:@"Pace"]) {
+                                   //                                       busStop.isPaceTransfer == YES;
+                                   //                                   }
+                                   
+                                   
+                                   NSLog(@"addedArtist %@", favoriteArtist.studioName);
+                                   [self.favoriteMap addAnnotation:favoriteArtist];
+                                   
+                               }
+                        
+    
+}
+
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id < MKAnnotation >)annotation{
+    
+    NSString *reuseIdentifier = @"reuseIdentifier";
+    
+    MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:reuseIdentifier];
+    
+    
+    if (annotationView == nil) {
         
-        annotationView.canShowCallout= YES;
+        if (busStops.transfers == NULL) {
+            annotationView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
+            
+        } else if ([busStops.transfers isEqualToString:@"Metra"]){
+            annotationView = [[MetraAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
+            
+        } else {
+            annotationView = [[PaceAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
+        }
+        
+        annotationView.canShowCallout = YES;
         annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        
-        ((MKPinAnnotationView *)(annotationView)).pinColor= MKPinAnnotationColorPurple;
-        ((MKPinAnnotationView *)(annotationView)).animatesDrop = YES;
         
     } else {
         
         annotationView.annotation = annotation;
     }
-    
     return annotationView;
-    
-    
 }
 
 -(void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
-    MKAnnotationView *aV;
+    MKAnnotationView *annotationView;
     
-    for (aV in views) {
+    for (annotationView in views) {
         
         // add animation to  TappedPhotoAnnotation
-        if ([aV.annotation isKindOfClass:[TappedPhotoAnnotationView class]]) {
+        if ([annotationView.annotation isKindOfClass:[TappedPhotoAnnotationView class]]) {
             continue;
         }
         
@@ -179,7 +233,7 @@
         }];
     }
 }
-
+*/
 
 
 @end

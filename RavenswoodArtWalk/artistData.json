@@ -3,7 +3,7 @@
              "studioName": "Toni Loves Beads",
              "artistName": "Toni",
              "RAWlocation": "In the big tent",
-             "address": "",
+             
              "medium":"jewelry",
              "blurb": "Random Drawings in ink, pencil, pastel and paint that I found floating around my mind. Color and technique – my focus is in combining the two to come up with one of a kind, unique beaded jewelry",
              "link": "http://www.etsy.com/shop/tonilovesbeads",
@@ -35,7 +35,7 @@
              "email": "sbflorio@gmail.com",
              "RAWlocation": "In the big tent",
              "medium":"photography",
-             "address": "",
+             
              "blurb": "My focus is on Italy travel photos: Positano, la Cinqueterra, Rome, Sorrento, and the Amilfi Coast",
              "link": "",
              "imageName":"http://ravenswoodartwalk.org/wp-content/uploads/2013/07/Sam-Florio-Photography-150x150.jpg"
@@ -46,7 +46,7 @@
              "RAWlocation": "In the big tent",
              "email": "re4mado@hotmail.com",
              "medium":"photography",
-             "address": "",
+             
              "blurb": "Reformado photography specializes in creating functional artwork from polaroid and digital images",
              "link":"http://www.re4mado.com",
              "imageName":"http://ravenswoodartwalk.org/wp-content/uploads/2013/07/Reformado-Photography-150x150.jpg"
@@ -56,7 +56,7 @@
              "artistName": "Roslyn Broder",
              "RAWlocation": "In the big tent",
              "medium":"jewelry",
-             "address": "",
+             
              "blurb": "Handcrafted Jewelry using vintage and contemporary components, enamel, sterling silver, and copper",
              "link":"http://www.redavadesigns.etsy.com", "imageName":"http://ravenswoodartwalk.org/wp-content/uploads/2013/07/RedAvaDesigns-150x150.jpg"
              },
@@ -66,7 +66,7 @@
              "email":"nikolabooks@gmail.com",
              "RAWlocation": "In the big tent",
              "medium":"books",
-             "address": "",
+             
              "blurb": "Author/storyteller W. Nikola-Lisa is an award-winning author of two dozen books for young readers.",
              "link":"http://www.nikolabooks.com",
              "imageName":"http://ravenswoodartwalk.org/wp-content/uploads/2013/07/NikolaBooks-150x150.jpg"
@@ -77,7 +77,7 @@
              "email": "michellestarbuckdesigns@gmail.com",
              "RAWlocation": "In the big tent",
              "medium":"jewelry",
-             "address": "",
+             
              "blurb": "Vintage findings used to create a jewelry collection that balances oganic and geometric design.",
              "link":"http://www.michellestarbuckdesigns.com",
              "imageName":"http://ravenswoodartwalk.org/wp-content/uploads/2013/07/Michelle-Strabuck-Designs-150x150.jpg"
@@ -88,7 +88,7 @@
              "email": "melaniefeerst@sbcglobal.net",
              "RAWlocation": "In the big tent",
              "medium":"jewelry",
-             "address": "",
+             
              "blurb": "Vibrant glass jewelry fabricated with industrial and 3D printed parts. Art bowls with some sass!",
              "link":"http://www.melaniefeerst.com",
              "imageName":"http://ravenswoodartwalk.org/wp-content/uploads/2013/07/Melanie-Feerst-Design-150x150.jpg"
@@ -97,7 +97,7 @@
              "studioName": "MandalaRay",
              "artistName": "",
              "RAWlocation": "In the big tent",
-             "address": "",
+             
              "medium":"art glass",
              "blurb": "Glass that has been fused in a kiln and layered to create patterns to be displayed or accesorized.",
              "link": "",
@@ -108,7 +108,7 @@
              "artistName": "",
              "RAWlocation": "In the big tent",
              "medium":"jewelry",
-             "address": "",
+             
              "blurb": "Maike’s Marvels creates wax and wire jewelry as well as encaustic collages inspired by nature.",
              "link":"http://www.maikesmarvels.com/", "imageName":"http://ravenswoodartwalk.org/wp-content/uploads/2013/07/Maikes-Marvels-150x150.jpg"
              },
@@ -117,7 +117,7 @@
              "artistName": "",
              "RAWlocation": "In the big tent",
              "medium":"ceramics",
-             "address": "",
+             
              "blurb": "Hand built and hand painted ceramics",
              "link":"http://www.etsy.com/shop/lorimehanceramics", "imageName":"http://ravenswoodartwalk.org/wp-content/uploads/2013/07/Lori-Mehan-Ceramics-150x150.jpg"
              },
@@ -126,7 +126,7 @@
              "artistName": "",
              "RAWlocation": "In the big tent",
              "medium":"jewelry",
-             "address": "",
+             
              "blurb": "Lady Faye Jewelery evokes nostalgic afternoons spent digging through your mother’s jewelry box.",
              "link":"http://ladyfayejewelry.com/", "imageName":"http://ravenswoodartwalk.org/wp-content/uploads/2013/07/Lady-Faye-Jewelry-150x150.jpg"
              },
@@ -135,7 +135,7 @@
              "artistName": "",
              "RAWlocation": "In the big tent",
              "medium":"sculpture",
-             "address": "",
+             
              "blurb": "kFroet Designs specializes in lost wax-casting, creating stand alone art while still accenting the human form.",
              "link":"http://www.etsy.com/shop/kfroetdesigns", "imageName":"http://ravenswoodartwalk.org/wp-content/uploads/2013/07/KFroetDesigns-150x150.jpg"
              },
@@ -143,7 +143,7 @@
              "studioName": "In Stolen Moments",
              "artistName": "",
              "RAWlocation": "In the big tent",
-             "address": "",
+             
              "medium":"printing",
              "blurb": "I’m a block printer with an affinity towards items that are both beautiful and functional.",
              "link":"http://www.instolenmoments.com",
@@ -153,7 +153,7 @@
              "studioName": "Gayle Weiss Designs",
              "artistName": "",
              "RAWlocation": "In the big tent",
-             "address": "",
+             
              "medium":"jewelry",
              "blurb": "One of a kind hand crafter jewelry comprised of Artisan glass, natural stone, and sterling silver.",
              "link":"http://www.gayleweissdesigns.com",
@@ -163,7 +163,7 @@
              "studioName": "Frannie's Felts & Fancies",
              "artistName": "",
              "RAWlocation": "In the big tent",
-             "address": "",
+             
              "medium":"apparel",
              "blurb": "I am a local artist and felter.  I sell wall art and wearable art made mostly of wool and silk.",
              "link":"http://www.franniesfeltsandfancies.blogspot.com/", "imageName":"http://ravenswoodartwalk.org/wp-content/uploads/2013/07/Frannies-Felts-Fancies-150x150.jpg"
@@ -173,7 +173,7 @@
              "artistName": "",
              "RAWlocation": "In the big tent",
              "medium":"illustration",
-             "address": "",
+             
              "blurb": "I create my illustrations by hand using ink, watercolor, and gouache. There are digital elements too of course. If I'm not drawing I love being outdoors, hiking in the natural world.",
              "link":"http://www.feralpony.com", "imageName":"http://ravenswoodartwalk.org/wp-content/uploads/2013/07/Feral-Pony-150x150.jpg"
              },
@@ -182,7 +182,7 @@
              "artistName": "",
              "RAWlocation": "In the big tent",
              "medium":"illustration",
-             "address": "jewelry",
+             
              "blurb": "Lampwork glass beads, sculpture, ornaments, and jewelry; stained glass pendants and suncatchers.",
              "link":"http://www.everlastingfirestudio.com",
              "imageName":"http://ravenswoodartwalk.org/wp-content/uploads/2013/07/Everlasting-Fire-Studio4-150x150.jpg"
@@ -191,7 +191,7 @@
              "studioName": "Erin Rossi Design",
              "artistName": "",
              "RAWlocation": "In the big tent",
-             "address": "",
+             
              "medium":"jewelry",
              "blurb": "One of a kind sterling jewely and small mixed media sculpture.",
              "link":"http://www.erinrossidesigns.com",
@@ -202,7 +202,7 @@
              "artistName": "",
              "RAWlocation": "In the big tent",
              "medium":"apparel",
-             "address": "",
+             
              "blurb": "Trained in London, City Girl Hats uses traditional millinery techniques to create unique headwear.",
              "link":"http://www.citygirlhats.etsy.com", "imageName":"http://ravenswoodartwalk.org/wp-content/uploads/2013/07/CityGirlHats-150x150.jpg"
              },
@@ -211,7 +211,7 @@
              "artistName": "",
              "RAWlocation": "In the big tent",
              "medium":"mosaics",
-             "address": "",
+             
              "blurb": "Mosaic art from jewelry, serving trays, to 3D sculptures.",
              "link":"http://www.chicagomosaics.com", "imageName":"http://ravenswoodartwalk.org/wp-content/uploads/2013/07/CHICAGO-MOSIACS-150x150.jpg"
              },
@@ -220,7 +220,7 @@
              "artistName": "",
              "RAWlocation": "In the big tent",
              "medium":"apparel",
-             "address": "",
+             
              "blurb": "I've been crafting unique hats, scarves, and vest since falling in love with the art of felting.",
              "link":"http://camillakruegerdesigns.blogspot.com/", "imageName":"http://ravenswoodartwalk.org/wp-content/uploads/2013/07/Camilla-Krueger-Designs-150x150.jpg"
              },
@@ -228,8 +228,8 @@
              "studioName": "Amati Originals",
              "artistName": "",
              "RAWlocation": "In the big tent",
-             "medium":"paintings",
-             "address": "",
+             "medium":"painting",
+             
              "blurb": "Highly textured paintings embellished with vintage buttons jewelry, beads, glass, wire and more.",
              "link":"http://www.AmatiOriginals.com", "imageName":"http://ravenswoodartwalk.org/wp-content/uploads/2013/07/Amati-Originals-150x150.jpg"
              },
@@ -237,7 +237,7 @@
              "studioName": "Alapash Home and Terrariums",
              "artistName": "",
              "RAWlocation": "In the big tent",
-             "address": "",
+             
              "medium":"terrariums",
              "blurb": "Unique terrariums with a simple message: No matter where or when, beauty is always at reach.",
              "link":"http://www.alapash.com", "imageName":"http://ravenswoodartwalk.org/wp-content/uploads/2013/07/Alapash-Home-and-Terrariums-150x150.jpg"
@@ -262,7 +262,7 @@
              "medium":"fine art",
              "artistName": "",
              "RAWlocation": "In Ravenswood Buildings",
-             "address": "4101 N. Ravenswood Ave. Chicago IL 60613"
+             "address": "4101 N. Ravenswood Ave., Chicago IL 60613"
              },
              {
              "link": "http://www.chicagomosaicschool.com",
@@ -292,19 +292,17 @@
              "blurb": "A collection of photographic C-Prints mounted on Aluminum, along with Metal and Traditional Prints.",
              "artistName": "",
              "RAWlocation": "In Ravenswood Buildings",
-             "medium":"photography",
-             "address": ""
+             "medium":"photography"
              },
              {
              "link": "http://www.saralenart.com",
              "email":"",
-             "imageName": "http://ravenswoodartwalk.org/wp-content/uploads/2013/07/Sara-Lenart-Jewelry-150x150.jpg",
+             "imageName": "http://ravenswoodartwalk.org/wp-content/uploads/2013/07/Sara-Lenart-jewelry-150x150.jpg",
              "studioName": "Sara Lenart Jewelry",
              "blurb": "Handcrafted sterling silver jewelry with incorporated semi precious stones and found objects.",
              "artistName": "",
              "RAWlocation": "In Ravenswood Buildings",
-             "medium":"jewelry",
-             "address": ""
+             "medium":"jewelry"
              },
              {
              "link": "http://www.chicagophotoclasses.com",
@@ -313,9 +311,7 @@
              "blurb": "Student centered program offering classes at all levels. Student photographs showcased in gallery.",
              "artistName": "",
              "RAWlocation": "In Ravenswood Buildings",
-             "medium":"educational",
-             "address": ""
-             },
+             "medium":"educational"             },
              {
              "link": "http://www.platformcoworking.com",
              "email":"info@platformcoworking.com",
@@ -341,11 +337,11 @@
              {
              "link": "http://www.nolanstudios.com",
              "imageName": "http://ravenswoodartwalk.org/wp-content/uploads/2013/07/Nolan-Studios-150x150.jpg",
-             "studioName": "Nolan Sudios",
+             "studioName": "Nolan Studios",
              "blurb": "Abstract painting and sculpture using tinted resin.",
              "artistName": "",
              "RAWlocation": "In Ravenswood Buildings",
-             "medium":"paintings",
+             "medium":"painting",
              "address": "1770 W Berteau, #205, Chicago, IL"
              },
              {
@@ -388,9 +384,7 @@
              "blurb": "Sumi-e ink and oil paintings of freshly painted flowers my garden at casa verde.",
              "artistName": "",
              "RAWlocation": "In Ravenswood Buildings",
-             "medium":"paintings",
-             "address": ""
-             },
+             "medium":"painting"             },
              {
              "link": "",
              "imageName": "http://ravenswoodartwalk.org/wp-content/uploads/2013/07/KarmaNuetrals-150x85.jpg",
@@ -398,9 +392,7 @@
              "blurb": "Karma Neutral Ceramics is a Ravenswood pottery studio that specializes in handmade functional and sculptural ceramics. We use a variety of firing processes including electric, raku and wood/salt firing.",
              "artistName": "",
              "RAWlocation": "In Ravenswood Buildings",
-             "medium":"ceramics",
-             "address": ""
-             },
+             "medium":"ceramics"             },
              {
              "link": "http://www.facebook.com/KBRomanArt",
              "imageName": "http://ravenswoodartwalk.org/wp-content/uploads/2013/07/K.B.RomanArt-150x150.jpg",
@@ -408,9 +400,7 @@
              "blurb": "I paint what moves me and never know what a painting will look like until it is done.",
              "artistName": "",
              "RAWlocation": "In Ravenswood Buildings",
-             "medium":"paintings",
-             "address": ""
-             },
+             "medium":"painting"             },
              {
              "link": "http://www.janetmesicmackie.com",
              "imageName": "http://ravenswoodartwalk.org/wp-content/uploads/2013/07/Janet-Mesic-Mackie-Photography-150x150.jpg",
@@ -428,9 +418,7 @@
              "blurb": "Changing nature of endless lake and sky, deep meditation and consciousness, stillness and seeing.",
              "artistName": "",
              "RAWlocation": "In Ravenswood Buildings",
-             "medium":"paintings",
-             "address": ""
-             },
+             "medium":"painting"             },
              {
              "link": "http://www.ingridsartoriginals.com",
              "imageName": "http://ravenswoodartwalk.org/wp-content/uploads/2013/07/INGRIDS-ORIGINALS-INC.-150x150.jpg",
@@ -462,7 +450,7 @@
              "artistName": "",
              "RAWlocation": "In Ravenswood Buildings",
              "medium":"ceramics",
-             "address": "3717 North Ravenswood Ave, #115W, Chicago, IL 60613"
+             "address": "3717 North Ravenswood Ave., #115W, Chicago, IL 60613"
              },
              {
              "link": "http://www.districtchicago.com",
@@ -471,9 +459,7 @@
              "blurb": "District uses vintage furniture as its canvas, focusing on the 50s and 60s Mid Century era.",
              "artistName": "",
              "RAWlocation": "In Ravenswood Buildings",
-             "medium":"furnishings",
-             "address": ""
-             },
+             "medium":"furnishings"             },
              {
              "link": "http://www.deafquest.com",
              "email":"resources@deafquest.com",
@@ -492,8 +478,7 @@
              "blurb": "Offering a curated collection of garment and hand-dyed women's clothing from past collections.",
              "artistName": "",
              "RAWlocation": "In Ravenswood Buildings",
-             "medium":"textiles",
-             "address": ""
+             "medium":"textiles"
              },
              {
              "link": "http://www.curtainscouture.com",
@@ -514,7 +499,7 @@
              "artistName": "",
              "RAWlocation": "In Ravenswood Buildings",
              "medium":"shoemaking",
-             "address": "4723 N Winchester #G, Chicago, IL 60640"
+             "address": "4723 N Winchester, #G, Chicago, IL 60640"
              },
              {
              "link": "http://www.chicagoglasscollective.com",
@@ -564,10 +549,8 @@
              "studioName": "Bill Bartelt Watercolors",
              "blurb": "Watercolor paintings or the urban and rural landscape of Chicago and the Midwest.",
              "artistName": "",
-             "medium":"paintings",
-             "RAWlocation": "In Ravenswood Buildings",
-             "address": ""
-             },
+             "medium":"painting",
+             "RAWlocation": "In Ravenswood Buildings"             },
              {
              "link": "http://www.awakeningsfoundation.net",
              "imageName": "http://ravenswoodartwalk.org/wp-content/uploads/2013/07/Awakenings-Foundation-150x150.jpg",
@@ -586,7 +569,7 @@
              "blurb": "Fine artist and published children's book author/illustrator working in oil, watercolor, collage and mosaic.",
              "artistName": "",
              "RAWlocation": "In Ravenswood Buildings",
-             "address": "1700 Irving Park Road # 307, Chicago Il 60613"
+             "address": "1700 Irving Park Road, # 307, Chicago Il 60613"
              },
              {
              "medium":"storytelling",
@@ -607,8 +590,7 @@
              "blurb": "Decorative ceramic lamps and shades defined by bold color, dramatic shapes and patterns.",
              "artistName": "Ronda Ruby",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Ceramics"
+             "medium":"ceramics"
              },
              {
              "link": "http://www.organicabylaura.com",
@@ -618,7 +600,6 @@
              "blurb": "Simple clean modern design to free formed one of a kind. Pendants, Bangles, Rings, and Earrings.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
              "medium":"jewelry"
              },
              {
@@ -628,7 +609,6 @@
              "blurb": "Art made from life, in contemplation of life, with an emphasis on light, stillness, and mystery.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
              "medium":"fine art"
              },
              {
@@ -638,8 +618,7 @@
              "blurb": "Organic and textured these describe my work. Inspired by visiting the lake and yoga practice.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Jewelry"
+             "medium":"jewelry"
              },
              {
              "link": "http://www.erinhochstatter.com",
@@ -649,7 +628,7 @@
              "blurb": "***test",
              "artistName": "",
              "RAWlocation": "***test***",
-             "address": "3935 N. Ravenswood Ave., Chicago, IL",
+             "address": "3935 N. Ravenswood Ave., Chicago, IL 60613",
              "medium":"***test***"
              },
              {
@@ -659,7 +638,7 @@
              "blurb": "IGO is a car sharing membership program that offers city residents an economic and environmentally conscious way to travel. Our fleet of newer and cleaner cars, combined with our attentive 24/7 member service has become the new standard in car sharing. With cars available where you need them, when you need them, IGO Car Sharing is for people who want all the benefits of a car without the hassles of owning one.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
+             
              "medium":"transportation"
              },
              {
@@ -669,8 +648,8 @@
              "blurb": "Handcrafted Artisan jewelry and unique metal art; well designed pieces inspired by nature and music.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Jewelry"
+             
+             "medium":"jewelry"
              },
              {
              "link": "http://www.feltwerker.com",
@@ -679,7 +658,7 @@
              "blurb": "Function-Texture-Color-Recycled funky wool treasures for you or your home. One of a kind.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
+             
              "medium":"textiles"
              },
              {
@@ -689,8 +668,8 @@
              "blurb": "Gifts made of repurposed and recycled vintage products.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Gifts"
+             
+             "medium":"gifts"
              },
              {
              "link": "",
@@ -699,8 +678,8 @@
              "blurb": "One of a kind hand built ceramic functional and sculptural objects, glaze and raku fired.",
              "artistName": "Chris Whittington",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Ceramics"
+             
+             "medium":"ceramics"
              },
              {
              "link": "http://www.broadstreet.etsy.com",
@@ -709,8 +688,8 @@
              "blurb": "Broad Street Jewelry is a collection of Urban amulets and vintage assemblage pieces of fine art.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Jewelry"
+             
+             "medium":"jewelry"
              },
              {
              "link": "http://www.etsy.com/shop/ArthursPlaidPants",
@@ -719,8 +698,8 @@
              "blurb": "Quirky original illustrations in the form of greeting cards, buttons, magnet prints, and posters.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Illustration"
+             
+             "medium":"illustration"
              },
              {
              "link": "http://www.ariyamastudio.com",
@@ -729,7 +708,7 @@
              "blurb": "Hand printed original screen prints and fine art reproductions.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
+             
              "medium":"fine art"
              },
              {
@@ -739,8 +718,8 @@
              "blurb": "I was born in Mexico and moved to Chicago when I was six, and my Latino heritage influences my work. So does my late mother, Albertina Medina, who was an avid knitter and crocheter.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Jewelry"
+             
+             "medium":"jewelry"
              },
              {
              "link": "http://www.ameliakieras.com",
@@ -749,7 +728,7 @@
              "blurb": "Handmade children's books, pop-up cards, digital collage, art prints. I make popup cards, picture books, and art prints.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
+             
              "medium":"Illustration"
              },
              {
@@ -759,7 +738,7 @@
              "blurb": "Wellness studio in Lincoln Square: Chiropractic, Massage Therapy, and Acupuncture.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
+             
              "medium":"Health"
              },
              {
@@ -769,7 +748,7 @@
              "blurb": "Paint, ink, watercolor, oil pastels, varnish, enamel, tar on wood create contemporary paintings.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
+             
              "medium":"painting"
              },
              {
@@ -779,7 +758,7 @@
              "blurb": "I have prints and original paintings of my work.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
+             
              "medium":"Illustration"
              },
              {
@@ -789,7 +768,7 @@
              "blurb": "I rescue old windows from Chicago alleyways and breathe colorful new life into them.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
+             
              "medium":"mixed media"
              },
              {
@@ -799,8 +778,8 @@
              "blurb": "Handmade silver and leather jewelry and pocket-purses made of fine cotton and silk.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Jewelry"
+             
+             "medium":"jewelry"
              },
              {
              "link": "http://www.i-m.co/jsikora/SIKORA/home.html",
@@ -809,7 +788,7 @@
              "blurb": "Portraits, Narrative and Figurative drawings and paintings with traditional materials",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
+             
              "medium":"painting"
              },
              {
@@ -819,8 +798,8 @@
              "blurb": "Outdoors subjects 35mm and med format Film and digital Scan, color manage, and print my work.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Photography"
+             
+             "medium":"photography"
              },
              {
              "link": "http://www.seventhgreencircle.com",
@@ -829,7 +808,7 @@
              "blurb": "We would like to present paintings, art installations, and relief paintings!",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
+             
              "medium":"painting"
              },
              {
@@ -839,7 +818,7 @@
              "blurb": "Embracing life circumstances which affect perspective in unexpected ways oftentimes leads to new adventures.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
+             
              "medium":""
              },
              {
@@ -849,8 +828,8 @@
              "blurb": "&#8220;Raw Candles are handmade with the finest natural fragrances, lead-free wicks, and clean burning waxes.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Candles"
+             
+             "medium":"candles"
              },
              {
              "link": "http://www.pmphotography.net",
@@ -859,8 +838,8 @@
              "blurb": "I strive to interpret nature in a sometimes abstract and painterly form with my photographs.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Photography"
+             
+             "medium":"photography"
              },
              {
              "link": "",
@@ -869,8 +848,8 @@
              "blurb": "Various architectural and landscape photography.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Photography"
+             
+             "medium":"photography"
              },
              {
              "link": "http://www.perceptualmotiondance.com",
@@ -879,8 +858,8 @@
              "blurb": "Perception Motion is a modern dance company with dances often inspired by visual art.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Dance"
+             
+             "medium":"cance"
              },
              {
              "link": "",
@@ -889,7 +868,7 @@
              "blurb": "My paintings range from figurative to abstract, but they all attempt to relate with the viewer.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
+             
              "medium":"painting"
              },
              {
@@ -899,8 +878,8 @@
              "blurb": "I love playing around with colors and edits to give my photographs a layered painted look.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Photography"
+             
+             "medium":"photography"
              },
              {
              "link": "",
@@ -909,7 +888,7 @@
              "blurb": "I use my 'little stories' collages as maquettes for drawings & paintings.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
+             
              "medium":"Mixed media"
              },
              {
@@ -920,7 +899,7 @@
              "artistName": "",
              "RAWlocation": "TBA",
              "address": "4428 N. Ravenswood, Chicago, IL",
-             "medium":"Painting"
+             "medium":"painting"
              },
              {
              "link": "http://www.marilyngrad.com",
@@ -929,7 +908,7 @@
              "blurb": "Eclectic, hand painted mixed media wall art in Asian, Inspirational, and Whim(sical) themes.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
+             
              "medium":"Mixed media"
              },
              {
@@ -939,7 +918,7 @@
              "blurb": "Creating artwork is a tool that allows me to express emotions. I use pastels with my hands on paper.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
+             
              "medium":"pastels"
              },
              {
@@ -949,8 +928,8 @@
              "blurb": "PASSION-scooting/shooting; on my mobility scooter. STREET PHOTOGRAPHY-it is me and it's for you!",
              "artistName": "",
              "RAWlocation": "",
-             "address": "",
-             "medium":"Photography"
+             
+             "medium":"photography"
              },
              {
              "link": "http://www.bonniegoldingpurses.com",
@@ -959,7 +938,7 @@
              "blurb": "Hand knit and handcrafted original designs in purses, scarves, hair accessories, and flower pins.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
+             
              "medium":"textiles"
              },
              {
@@ -969,8 +948,8 @@
              "blurb": "These plein air watercolors are portraits of places, revealing both familiarity and the novelty of Chicago's lakefront, Lincoln Park, the Art Institute's Great Lakes Fountain, and Lake Geneva's beaches. Also included are artist's books, drawings and prints.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Painting"
+             
+             "medium":"painting"
              },
              {
              "link": "http://www.leonsarantosartist.com",
@@ -979,8 +958,8 @@
              "blurb": "Leon Sarantos, College of Arts and Architecture, University of Michigan: Exhibited nationally and internationally.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Painting"
+             
+             "medium":"painting"
              },
              {
              "link": "http://www.etsy.com/shop/LaPucaraCollections",
@@ -989,8 +968,8 @@
              "blurb": "I make one of a kind jewelry with seeds sustainably harvested from the Amazon rainforest.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Jewelry"
+             
+             "medium":"jewelry"
              },
              {
              "link": "",
@@ -999,8 +978,8 @@
              "blurb": "I combine multiple mediums in my paintings and experiment with collage using recycled magazines.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Painting"
+             
+             "medium":"painting"
              },
              {
              "link": "",
@@ -1009,8 +988,8 @@
              "blurb": "Original jewelry using the following materials-silver, copper, semi-precious stones and beads.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Jewelry"
+             
+             "medium":"jewelry"
              },
              {
              "link": "",
@@ -1019,8 +998,8 @@
              "blurb": "All M. Katherine Designs jewelry is hand-crafted by a local artist and one of a kind.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Jewelry"
+             
+             "medium":"jewelry"
              },
              {
              "link": "",
@@ -1029,8 +1008,8 @@
              "blurb": "My jewelry uses vintage pins and beads, sterling silver wire, and plated chains.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Jewelry"
+             
+             "medium":"jewelry"
              },
              {
              "link": "",
@@ -1040,8 +1019,8 @@
              "blurb": "Capture details and beauty that is- at times-overlooked. Bold colors, shapes, angles, and lighting.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Photography"
+             
+             "medium":"photography"
              },
              {
              "link": "http://www.idmphotography.com",
@@ -1051,8 +1030,8 @@
              "blurb": "I will be showcasing a combination of my lifestyle work and automotive work in a fine art format.",
              "artistName": "Ian Merritt",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Photography"
+             
+             "medium":"photography"
              },
              {
              "link": "http://gsiebert.com/home.html",
@@ -1062,7 +1041,7 @@
              "blurb": "I focus on the passage of time within memory  and the natural progression of light within a life.",
              "artistName": "Gwyndolyn Siebert",
              "RAWlocation": "TBA",
-             "address": "",
+             
              "medium":"mixed media"
              },
              {
@@ -1073,8 +1052,8 @@
              "blurb": "Small painting, prints, and works on paper. Investigating color spectrums and color vibrations.",
              "artistName": "Tim Vitek",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Painting"
+             
+             "medium":"painting"
              },
              {
              "link": "",
@@ -1083,8 +1062,8 @@
              "blurb": "Vibrant and colorful paintings of images found in nature.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Painting"
+             
+             "medium":"painting"
              },
              {
              "link": "",
@@ -1093,7 +1072,7 @@
              "blurb": "Mixed media encaustic collages using antique prints and objects with copper framing.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
+             
              "medium":"collage"
              },
              {
@@ -1115,7 +1094,7 @@
              "blurb": "'Snail Mail Security' is an ongoing series of prints of paper collage using found material.",
              "artistName": "Dan Schreck",
              "RAWlocation": "TBA",
-             "address": "",
+             
              "medium":"Printmaking"
              },
              {
@@ -1126,8 +1105,8 @@
              "blurb": "My photos are of places near and far, of light and color, of mood and ambiance, both art and essay.",
              "artistName": "Carol Fletcher",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Photography"
+             
+             "medium":"photography"
              },
              {
              "link": "http://www.bjphotographs.com",
@@ -1136,8 +1115,8 @@
              "blurb": "Let the photographs do the talking.",
              "artistName": "",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Photography"
+             
+             "medium":"photography"
              },
              {
              "link": "http://www.etsy.com/shop/WilliamMCarroll",
@@ -1146,7 +1125,7 @@
              "blurb": "I use a variety of media: papercuts, paintings, assembled boxes, and with found objects.",
              "artistName": "William Carroll",
              "RAWlocation": "TBA",
-             "address": "",
+             
              "medium":"Mixed media"
              },
              {
@@ -1156,8 +1135,7 @@
              "blurb": "Karen paints in oil and watercolor. She seeks to capture the shadow, light, and colors of nature.",
              "artistName": "Karen Vierneisel",
              "RAWlocation": "TBA",
-             "address": "",
-             "medium":"Painting"
+             "medium":"painting"
              },
              {
              "link": "http://www.annponce.com",
@@ -1168,7 +1146,7 @@
              "email": "annponce@aol.com",
              "RAWlocation": "TBA",
              "address": "4553 N. Wolcott, Chicago, IL",
-             "medium":"Painting"
+             "medium":"painting"
              },
              {
              "studioName": "Two Fish Gallery",

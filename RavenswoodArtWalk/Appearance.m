@@ -18,20 +18,22 @@
     
     UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
     
-    [navigationBarAppearance setBackgroundImage:[UIImage imageNamed:@"ArtistTableCell.png"]  forBarMetrics:UIBarMetricsDefault];
-    [navigationBarAppearance setTitleVerticalPositionAdjustment:5.0f forBarMetrics:UIBarMetricsDefault];
+    [navigationBarAppearance setBackgroundImage:[UIImage imageNamed:@"NavBarBG.png"]  forBarMetrics:UIBarMetricsDefault];
+   // [navigationBarAppearance setTitleVerticalPositionAdjustment:-2.0f forBarMetrics:UIBarMetricsDefault];
+    //[navigationBarAppearance setTranslucent:NO];
     
-    NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, [UIFont fontWithName:@"Oswald" size:18.0],UITextAttributeFont, nil];
+    NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:191.0/255.0 green:47.0/255.0 blue:28.0/255.0 alpha:1.0], UITextAttributeTextColor, [UIFont fontWithName:@"Oswald" size:23.0],UITextAttributeFont, nil];
+
     [navigationBarAppearance setTitleTextAttributes: textAttributes];
     
-}
-/*#pragma
+
+
+#pragma
 #pragma BackButton Attributes
     
-    int imageSize = 44; //image width
     
-    UIImage *barItemBackDefaultImg = [[UIImage imageNamed:@"monsterNavBar_back.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, imageSize, 0, 0)];
-    UIImage *barItemBackSelectImg = [[UIImage imageNamed:@"monsterNavBar_back.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, imageSize, 0, 0)];
+    UIImage *barItemBackDefaultImg = [[UIImage imageNamed:@"navBarBack.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 10.0, 0, 10.0)];
+    UIImage *barItemBackSelectImg = [[UIImage imageNamed:@"navBarBack-Selected.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 20.0, 0, 25.0)];
     
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage: barItemBackDefaultImg
                                                       forState:UIControlStateNormal
@@ -41,10 +43,14 @@
                                                       forState:UIControlStateSelected
                                                     barMetrics:UIBarMetricsDefault];
     
-    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, imageSize*2)
-                                                         forBarMetrics:UIBarMetricsDefault]; //this one scoots the default title offscreen.
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                [UIColor grayColor],UITextAttributeTextColor,
+                                [UIColor clearColor],UITextAttributeTextShadowColor,
+                                [UIFont fontWithName:@"oswald" size:12.0f],UITextAttributeFont,
+                                nil];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:attributes forState:UIControlStateNormal];
     
-    UIImage *barButtonImage = [[UIImage imageNamed:@"monsterNavBar-stretchyButton.png"] stretchableImageWithLeftCapWidth:12 topCapHeight:0] ;
+   /* UIImage *barButtonImage = [[UIImage imageNamed:@"monsterNavBar-stretchyButton.png"] stretchableImageWithLeftCapWidth:12 topCapHeight:0] ;
     UIImage *barButtonTappedImage = [[UIImage imageNamed:@"monsterNavBar-stretchyButton-tapped.png"] stretchableImageWithLeftCapWidth:12 topCapHeight:0] ;
     
     [[UIBarButtonItem appearance] setTintColor: [UIColor purpleColor]];
@@ -59,7 +65,7 @@
                                                style:UIBarButtonItemStyleBordered
                                           barMetrics:UIBarMetricsDefault];
     
-    [[UIBarButtonItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, 1.f) forBarMetrics:UIBarMetricsDefault];
-}*/
+    [[UIBarButtonItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, 1.f) forBarMetrics:UIBarMetricsDefault];*/
+}
 
 @end
