@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <CoreData/CoreData.h>
 #import "Appearance.h"
+#import "AFNetworking.h"
 
 @interface AppDelegate ()
 @property (strong, nonatomic) NSManagedObjectModel *managedObjectModel;
@@ -26,6 +27,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     [Appearance applyStyle];
     
     NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024

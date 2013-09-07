@@ -8,19 +8,24 @@
 
 #import "ArtistViewController.h"
 #import "AppDelegate.h"
+#import "GoogleCoordsAPIClient.h"
+#import <AFNetworking.h>
 
 static NSString *CellIdentifier = @"CellID";
 
 @interface ArtistViewController ()
 
 {
-    NSData          *artistData;
-    NSString        *sortString;
-    double          latitudeInput;
-    double          longitudeInput;
-    NSNumber        *latitude;
-    NSNumber        *longitude;
-    NSMutableArray  *artistTableArray;
+    NSData                  *artistData;
+    NSString                *sortString;
+    double                  latitudeInput;
+    double                  longitudeInput;
+    NSNumber                *latitude;
+    NSNumber                *longitude;
+    NSMutableArray          *artistTableArray;
+    GoogleCoordsAPIClient   *googleClient;
+    NSDictionary            *JSONResponse;
+    NSDictionary            *resultsDictionary;
 }
 
 @property (strong, nonatomic) NSFileManager                 *fileManager;
@@ -33,7 +38,8 @@ static NSString *CellIdentifier = @"CellID";
 -(void)setupArtists;
 -(void)parseArtistJSON;
 -(void)formatSegmentControl;
--(void)lookupCoords;
+-(void)downloadCoords;
+- (void)lookupCoordsForArtist:(Artist *)artist;
 
 @end
 
@@ -51,6 +57,8 @@ static NSString *CellIdentifier = @"CellID";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    googleClient = [GoogleCoordsAPIClient sharedClient];
     
     self.fileManager =[NSFileManager defaultManager];
     self.documentDirectory = [[self.fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
@@ -161,10 +169,8 @@ static NSString *CellIdentifier = @"CellID";
     if (!success) {
         NSLog (@"Error: %@", error.description);
     }
-    NSLog(@"setupArtists, fetchResults: %@", self.fetchedResultsController);
+    
 }
-
-
 
 
 -(void)parseArtistJSON
@@ -224,7 +230,7 @@ static NSString *CellIdentifier = @"CellID";
             {
                 NSLog(@"%@: not null", artist.studioName);
                 
-                NSString *addressSearchString = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?address=%@&sensor=false", artist.address];
+                NSString *addressSearchString = [NSString stringWithFormat:@"maps/api/geocode/json?address=%@&sensor=false", artist.address];
                 NSString *addressURLString = [addressSearchString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                 artist.mapSearch = addressURLString;
             }
@@ -241,45 +247,66 @@ static NSString *CellIdentifier = @"CellID";
     NSError *saveError = nil;
     [self.managedObjectContext save: &saveError];
  //   [self setupArtists];
-    [self lookupCoords];
+    [self downloadCoords];
 
 }
 
--(void)lookupCoords
+-(void)downloadCoords
 {
     for (Artist *mappedArtist in artistTableArray) {
        
-        NSURL *url = [NSURL URLWithString:mappedArtist.mapSearch];
+        NSString* path = mappedArtist.mapSearch;
         
         if (mappedArtist.mapSearch !=nil) {
             
-        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+            NSURLRequest* urlRequest = [googleClient requestWithMethod:@"GET" path:path parameters:nil];
         
-        [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error) {
-            
-            NSDictionary *resultsDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            NSArray *resultsArray = [resultsDictionary objectForKey:@"results"];
-            NSDictionary *mainDictionary = [resultsArray objectAtIndex:0];
-            NSDictionary *geometryDictionary = [mainDictionary objectForKey:@"geometry"];
-            NSDictionary *locationDictionary = [geometryDictionary objectForKey:@"location"];
-            
-            latitudeInput = [[locationDictionary objectForKey:@"lat"]doubleValue];
-            longitudeInput = [[locationDictionary objectForKey:@"lng"] doubleValue];
-            mappedArtist.addressLat = [NSNumber numberWithDouble:latitudeInput];
-            mappedArtist.addressLng = [NSNumber numberWithDouble:longitudeInput];
-            NSError *saveError = nil;
-            [self.managedObjectContext save: &saveError];
-            NSLog(@"for %@: lat/long:%@, %@ ", mappedArtist.studioName, mappedArtist.addressLat, mappedArtist.addressLng);
-                }];
-           
-            NSError *saveError = nil;
-            [self.managedObjectContext save: &saveError];
-        }
-        [self.artistsTable reloadData];
+            // Create JSON request operation
+            AFJSONRequestOperation* operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                
+                //Request succeeded block
+                resultsDictionary = JSON;
+                
+               // [self performSelector:@selector(lookupCoordsForArtist:) withObject:mappedArtist afterDelay:0.5];
+                [self lookupCoordsForArtist:mappedArtist];
+                
+            } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
 
+                // 7 - Request failed block
+                NSLog(@"received a %d", response.statusCode);
+                NSLog(@"the error was %@", error);
+            }];
+            //Start request
+            [operation start];
+
+            
+        }
+    
     }
+[self.artistsTable reloadData];
+
+
+}
+
+- (void)lookupCoordsForArtist:(Artist *)artist
+{
+ 
+    NSArray *resultsArray = [resultsDictionary objectForKey:@"results"];
+    NSDictionary *mainDictionary = [resultsArray objectAtIndex:0];
+    NSDictionary *geometryDictionary = [mainDictionary objectForKey:@"geometry"];
+    NSDictionary *locationDictionary = [geometryDictionary objectForKey:@"location"];
+    
+    latitudeInput = [[locationDictionary objectForKey:@"lat"]doubleValue];x:
+    longitudeInput = [[locationDictionary objectForKey:@"lng"] doubleValue];
+    artist.addressLat = [NSNumber numberWithDouble:latitudeInput];
+    artist.addressLng = [NSNumber numberWithDouble:longitudeInput];
+    NSError *saveError = nil;
+    [self.managedObjectContext save: &saveError];
+    NSLog(@"for %@: lat/long:%@, %@ ", artist.studioName, artist.addressLat, artist.addressLng);
+    
     
 }
+
 #pragma mark -- TableView Setup
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

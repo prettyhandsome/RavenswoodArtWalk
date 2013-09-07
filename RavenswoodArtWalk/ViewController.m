@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 #import "AppDelegate.h"
+#import "Artist.h"
+#import "ArtistAnnotationView.h"
+#import "ArtistAnnotation.h"
 
 @interface ViewController ()
 {
@@ -15,6 +18,8 @@
     
     NSString *currentLatitude;
     NSString *currentLongitude;
+    int       favoritesCount;
+    NSString *favoritesString;
 }
 
 @property (strong, nonatomic) CLLocationManager *myLocationManager;
@@ -23,6 +28,7 @@
 
 - (void)startStandardUpdates;
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations;
+- (void)getFavorites;
 
 @end
 
@@ -32,9 +38,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIFont *oswald = [UIFont fontWithName:@"Oswald" size:self.favoritesLabel.font.pointSize];
+    self.favoritesLabel.font = oswald;
+    self.navigationItem.title=@"Ravenswood Art Walk";
+
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self startStandardUpdates];
+    [self getFavorites];
+    NSLog(@"favorites: %d", favoritesCount);
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -79,7 +95,13 @@
     currentLongitude = [NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude];
     NSLog(@"currently at lat:%f long:%f", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude);
     
-//if you're using the location for something. 
+//if you're using the location for something.
+    CLLocationCoordinate2D center = currentLocation.coordinate;
+    MKCoordinateSpan span = MKCoordinateSpanMake(0.008, 0.008);
+    MKCoordinateRegion region = MKCoordinateRegionMake(center, span);
+    
+    self.favoriteMap.region = region;
+    
     
 }
 
@@ -103,23 +125,23 @@
     popUpLabel.text = popUpString;
     
     
-}
+}*/
 
--(void)getFavorites{
+-(void)getFavorites
+{
     
     NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
     
     NSFetchRequest *favoritesFetchRequest = [[NSFetchRequest alloc] init];
     
-    NSPredicate * selectedPredicate = [NSPredicate predicateWithFormat:@"favorite = %@", 1];
+    NSPredicate * selectedPredicate = [NSPredicate predicateWithFormat:@"favorite = %d", 1];
     
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Artist" inManagedObjectContext:managedObjectContext];
     [favoritesFetchRequest setEntity:entity];
     [favoritesFetchRequest setPredicate: selectedPredicate];
     
-    //once Tasks save taskDetails, switch name to taskDetails
-    
     favoritesFetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"studioName" ascending:NO],[NSSortDescriptor sortDescriptorWithKey:@"rawLocation" ascending:NO]];
+    
     
     self.favoritesResultsController= [[NSFetchedResultsController alloc]
                                     initWithFetchRequest:favoritesFetchRequest
@@ -133,32 +155,40 @@
     if (!success) {
         NSLog (@"Error: %@", error.description);
     }
+     if ([[self.favoritesResultsController fetchedObjects] count] != 0)  {
     
+         favoritesCount = self.favoritesResultsController.fetchedObjects.count;
     
-                               for (entity in self.favoritesResultsController){
-                                   
-                                   
-                                   
-                                   
-                                   BusStops *busStop = [[BusStops alloc] init];
-                                   busStop.title = titleStopName;
-                                   busStop.subtitle = subtitleID;
-                                   busStop.coordinate = CLLocationCoordinate2DMake([latitude floatValue], [longitude floatValue]);
-                                   busStop.direction = direction;
-                                   busStop.transfers = transfers;
-                                   busStop.busID = busID;
-                                   busStop.stopID = stopID;
-                                   
-                                   //                                   if ([[busDictionary objectForKey:@"inter_modal"] isEqual:@"Pace"]) {
-                                   //                                       busStop.isPaceTransfer == YES;
-                                   //                                   }
-                                   
-                                   
-                                   NSLog(@"addedArtist %@", favoriteArtist.studioName);
-                                   [self.favoriteMap addAnnotation:favoriteArtist];
-                                   
-                               }
-                        
+        if (favoritesCount > 1)
+        {
+            favoritesString = [NSString stringWithFormat:@"You have %d favorite artists.", favoritesCount];
+        
+        } else {
+        favoritesString = [NSString stringWithFormat:@"You have 1 favorite artist"];
+        }
+        
+    }else{
+        
+        favoritesString =[NSString stringWithFormat:@"You have no favorites."];
+
+    }
+    
+        self.favoritesLabel.text =favoritesString;
+   
+    for (Artist *favArtist in self.favoritesResultsController.fetchedObjects) {
+        
+        if (favArtist.address !=nil){
+            NSLog(@"studio name: %@", favArtist.studioName);
+        CLLocationCoordinate2D artistCoordinate = CLLocationCoordinate2DMake([favArtist.addressLat doubleValue], [favArtist.addressLng doubleValue]);
+        ArtistAnnotation *artistAnnotation = [ArtistAnnotation initWithCoordinate:artistCoordinate title:favArtist.studioName subtitle:favArtist.medium andObjectID:favArtist.objectID];
+        
+        id<MKAnnotation> annotation = artistAnnotation;
+            
+        [self.favoriteMap addAnnotation:annotation];
+            NSLog(@"annotation added at %f, %f", artistAnnotation.coordinate.latitude, artistAnnotation.coordinate.longitude);
+        }
+    }
+    
     
 }
 
@@ -167,32 +197,38 @@
     
     NSString *reuseIdentifier = @"reuseIdentifier";
     
-    MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:reuseIdentifier];
+    MKAnnotationView *annotationView = [self.favoriteMap dequeueReusableAnnotationViewWithIdentifier:reuseIdentifier];
     
+    if ([annotation isKindOfClass:[ArtistAnnotation class]]) {
+        
+        annotationView = [[ArtistAnnotationView alloc] initWithAnnotation:annotation
+                                                               reuseIdentifier:reuseIdentifier];
+        annotationView.canShowCallout= YES;
+        NSLog(@"annotationView added at %f, %f", annotation.coordinate.latitude, annotation.coordinate.longitude);
+
+        
+    }
     
-    if (annotationView == nil) {
+    if(annotationView == nil) {
+        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
+                                                         reuseIdentifier:reuseIdentifier];
         
-        if (busStops.transfers == NULL) {
-            annotationView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
-            
-        } else if ([busStops.transfers isEqualToString:@"Metra"]){
-            annotationView = [[MetraAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
-            
-        } else {
-            annotationView = [[PaceAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
-        }
-        
-        annotationView.canShowCallout = YES;
+        annotationView.canShowCallout= YES;
         annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        
+        ((MKPinAnnotationView *)(annotationView)).pinColor= MKPinAnnotationColorRed;
+        ((MKPinAnnotationView *)(annotationView)).animatesDrop = YES;
         
     } else {
         
         annotationView.annotation = annotation;
     }
+    
     return annotationView;
+
 }
 
--(void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
+/*-(void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
     MKAnnotationView *annotationView;
     
     for (annotationView in views) {
@@ -204,7 +240,7 @@
         
         // Check if current annotation is inside visible map rect, else go to next one
         MKMapPoint point =  MKMapPointForCoordinate(aV.annotation.coordinate);
-        if (!MKMapRectContainsPoint(self.mapView.visibleMapRect, point)) {
+        if (!MKMapRectContainsPoint(self.favoriteMap.visibleMapRect, point)) {
             continue;
         }
         

@@ -18,11 +18,15 @@
     
     UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
     
-    [navigationBarAppearance setBackgroundImage:[UIImage imageNamed:@"NavBarBG.png"]  forBarMetrics:UIBarMetricsDefault];
-   // [navigationBarAppearance setTitleVerticalPositionAdjustment:-2.0f forBarMetrics:UIBarMetricsDefault];
+    [navigationBarAppearance setBackgroundImage:[UIImage imageNamed:@"navBarBG.png"]  forBarMetrics:UIBarMetricsDefault];
+    [navigationBarAppearance setTitleVerticalPositionAdjustment:-4.0f forBarMetrics:UIBarMetricsDefault];
     //[navigationBarAppearance setTranslucent:NO];
     
-    NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:191.0/255.0 green:47.0/255.0 blue:28.0/255.0 alpha:1.0], UITextAttributeTextColor, [UIFont fontWithName:@"Oswald" size:23.0],UITextAttributeFont, nil];
+    NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    [UIColor colorWithRed:191.0/255.0 green:47.0/255.0 blue:28.0/255.0 alpha:1.0], UITextAttributeTextColor,
+                                    [UIFont fontWithName:@"Oswald" size:18.0],UITextAttributeFont,
+                                    [UIColor clearColor],UITextAttributeTextShadowColor,
+                                    nil];
 
     [navigationBarAppearance setTitleTextAttributes: textAttributes];
     
@@ -32,8 +36,8 @@
 #pragma BackButton Attributes
     
     
-    UIImage *barItemBackDefaultImg = [[UIImage imageNamed:@"navBarBack.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 10.0, 0, 10.0)];
-    UIImage *barItemBackSelectImg = [[UIImage imageNamed:@"navBarBack-Selected.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 20.0, 0, 25.0)];
+    UIImage *barItemBackDefaultImg = [[UIImage imageNamed:@"navBarBack.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(5.0, 15.0, 10.0, 10.0)];
+    UIImage *barItemBackSelectImg = [[UIImage imageNamed:@"navBarBack-Selected.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(5.0, 15.0, 10.0, 10.0)];
     
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage: barItemBackDefaultImg
                                                       forState:UIControlStateNormal
@@ -66,6 +70,8 @@
                                           barMetrics:UIBarMetricsDefault];
     
     [[UIBarButtonItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, 1.f) forBarMetrics:UIBarMetricsDefault];*/
+
+
 }
 
 @end

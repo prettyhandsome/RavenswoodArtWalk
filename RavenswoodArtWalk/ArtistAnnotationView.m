@@ -14,6 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.image = [UIImage imageNamed:@"AnnotationPin.png"];
         // Initialization code
     }
     return self;

@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		897A342617DA3C00009D7E3E /* AnnotationPin.png in Resources */ = {isa = PBXBuildFile; fileRef = 897A342417DA3C00009D7E3E /* AnnotationPin.png */; };
+		897A342717DA3C00009D7E3E /* AnnotationPin@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = 897A342517DA3C00009D7E3E /* AnnotationPin@2px.png */; };
+		897A342E17DA5BDF009D7E3E /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 897A342D17DA5BDF009D7E3E /* FavoritesViewController.m */; };
 		89A41F5F17D0E5B50031C9C6 /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A41F5E17D0E5B50031C9C6 /* Artist.m */; };
+		89AEF47F17D8F7EC00A3046E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89AEF47D17D8F7CE00A3046E /* SystemConfiguration.framework */; };
+		89AEF48217D8F82700A3046E /* GoogleCoordsAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AEF48117D8F82700A3046E /* GoogleCoordsAPIClient.m */; };
+		89AEF48D17D9562000A3046E /* navBarBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 89AEF48B17D9562000A3046E /* navBarBG.png */; };
+		89AEF48E17D9562000A3046E /* navBarBG@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = 89AEF48C17D9562000A3046E /* navBarBG@2px.png */; };
 		A42F575317AC91F000A55332 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42F575217AC91F000A55332 /* UIKit.framework */; };
 		A42F575517AC91F000A55332 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42F575417AC91F000A55332 /* Foundation.framework */; };
 		A42F575717AC91F000A55332 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42F575617AC91F000A55332 /* CoreGraphics.framework */; };
@@ -26,8 +33,6 @@
 		A496EA2A17CD4A0F0012081B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A496EA2917CD4A0F0012081B /* MapKit.framework */; };
 		A4A046F317CB9E2700391B43 /* ArtistAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A046F217CB9E2700391B43 /* ArtistAnnotationView.m */; };
 		A4A046F617CB9E3B00391B43 /* ArtistAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A046F517CB9E3B00391B43 /* ArtistAnnotation.m */; };
-		A4A818EB17CE3CD100A7E5C4 /* navBarBG@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A818E717CE3CD100A7E5C4 /* navBarBG@2px.png */; };
-		A4A818EC17CE3CD100A7E5C4 /* navBarBG.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A818E817CE3CD100A7E5C4 /* navBarBG.png */; };
 		A4A818F717CE501D00A7E5C4 /* navBarBack-Selected@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A818F317CE501D00A7E5C4 /* navBarBack-Selected@2px.png */; };
 		A4A818F817CE501D00A7E5C4 /* navBarBack-Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A818F417CE501D00A7E5C4 /* navBarBack-Selected.png */; };
 		A4A818F917CE501D00A7E5C4 /* navBarBack@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A818F517CE501D00A7E5C4 /* navBarBack@2px.png */; };
@@ -48,11 +53,23 @@
 		A4D366DA17BFC9C100D42D9D /* Oswald-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A4D366D917BFC82900D42D9D /* Oswald-Regular.otf */; };
 		A4D366E117C03F8D00D42D9D /* ArtistTableCell@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D366DF17C03F8C00D42D9D /* ArtistTableCell@2px.png */; };
 		A4D366E217C03F8D00D42D9D /* ArtistTableCell.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D366E017C03F8D00D42D9D /* ArtistTableCell.png */; };
+		A60A26F6907941FB91B6E004 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C13A2C45E49463B9C641303 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C13A2C45E49463B9C641303 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		897A342417DA3C00009D7E3E /* AnnotationPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnnotationPin.png; sourceTree = "<group>"; };
+		897A342517DA3C00009D7E3E /* AnnotationPin@2px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AnnotationPin@2px.png"; sourceTree = "<group>"; };
+		897A342C17DA5BDF009D7E3E /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
+		897A342D17DA5BDF009D7E3E /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
 		89A41F5D17D0E5B50031C9C6 /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
 		89A41F5E17D0E5B50031C9C6 /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
+		89AEF47D17D8F7CE00A3046E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		89AEF48017D8F82700A3046E /* GoogleCoordsAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleCoordsAPIClient.h; sourceTree = "<group>"; };
+		89AEF48117D8F82700A3046E /* GoogleCoordsAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleCoordsAPIClient.m; sourceTree = "<group>"; };
+		89AEF48B17D9562000A3046E /* navBarBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navBarBG.png; sourceTree = "<group>"; };
+		89AEF48C17D9562000A3046E /* navBarBG@2px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navBarBG@2px.png"; sourceTree = "<group>"; };
+		A369585413F745CF87EF431E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		A42F574F17AC91F000A55332 /* RavenswoodArtWalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RavenswoodArtWalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42F575217AC91F000A55332 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A42F575417AC91F000A55332 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -78,8 +95,6 @@
 		A4A046F217CB9E2700391B43 /* ArtistAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistAnnotationView.m; sourceTree = "<group>"; };
 		A4A046F417CB9E3B00391B43 /* ArtistAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistAnnotation.h; sourceTree = "<group>"; };
 		A4A046F517CB9E3B00391B43 /* ArtistAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistAnnotation.m; sourceTree = "<group>"; };
-		A4A818E717CE3CD100A7E5C4 /* navBarBG@2px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navBarBG@2px.png"; sourceTree = "<group>"; };
-		A4A818E817CE3CD100A7E5C4 /* navBarBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navBarBG.png; sourceTree = "<group>"; };
 		A4A818F317CE501D00A7E5C4 /* navBarBack-Selected@2px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navBarBack-Selected@2px.png"; sourceTree = "<group>"; };
 		A4A818F417CE501D00A7E5C4 /* navBarBack-Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navBarBack-Selected.png"; sourceTree = "<group>"; };
 		A4A818F517CE501D00A7E5C4 /* navBarBack@2px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navBarBack@2px.png"; sourceTree = "<group>"; };
@@ -114,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89AEF47F17D8F7EC00A3046E /* SystemConfiguration.framework in Frameworks */,
 				A496EA2A17CD4A0F0012081B /* MapKit.framework in Frameworks */,
 				A48927EF17C4075F002FD30C /* QuartzCore.framework in Frameworks */,
 				A48927EC17C40346002FD30C /* CoreLocation.framework in Frameworks */,
@@ -121,19 +137,35 @@
 				A4D366C417BE6B5500D42D9D /* CoreData.framework in Frameworks */,
 				A42F575317AC91F000A55332 /* UIKit.framework in Frameworks */,
 				A42F575517AC91F000A55332 /* Foundation.framework in Frameworks */,
+				A60A26F6907941FB91B6E004 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		897A342B17DA59BE009D7E3E /* Artist List */ = {
+			isa = PBXGroup;
+			children = (
+				A4D3667917BBB6B400D42D9D /* ArtistViewController.h */,
+				A4D3667A17BBB6B400D42D9D /* ArtistViewController.m */,
+				A4D3668517BBB7BF00D42D9D /* ArtistCell.h */,
+				A4D3668617BBB7BF00D42D9D /* ArtistCell.m */,
+				89AEF48017D8F82700A3046E /* GoogleCoordsAPIClient.h */,
+				89AEF48117D8F82700A3046E /* GoogleCoordsAPIClient.m */,
+				897A342C17DA5BDF009D7E3E /* FavoritesViewController.h */,
+				897A342D17DA5BDF009D7E3E /* FavoritesViewController.m */,
+			);
+			name = "Artist List";
+			sourceTree = "<group>";
+		};
 		A42F574617AC91F000A55332 = {
 			isa = PBXGroup;
 			children = (
-				A496EA2917CD4A0F0012081B /* MapKit.framework */,
 				A42F575817AC91F000A55332 /* RavenswoodArtWalk */,
 				A42F575117AC91F000A55332 /* Frameworks */,
 				A42F575017AC91F000A55332 /* Products */,
+				A369585413F745CF87EF431E /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,12 +180,15 @@
 		A42F575117AC91F000A55332 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89AEF47D17D8F7CE00A3046E /* SystemConfiguration.framework */,
+				A496EA2917CD4A0F0012081B /* MapKit.framework */,
 				A48927ED17C40732002FD30C /* QuartzCore.framework */,
 				A48927EA17C402EB002FD30C /* CoreLocation.framework */,
 				A4D366C317BE6B5500D42D9D /* CoreData.framework */,
 				A42F575217AC91F000A55332 /* UIKit.framework */,
 				A42F575417AC91F000A55332 /* Foundation.framework */,
 				A42F575617AC91F000A55332 /* CoreGraphics.framework */,
+				0C13A2C45E49463B9C641303 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -167,10 +202,7 @@
 				A4AC310017C8E4FC00708C28 /* Appearance.m */,
 				A42F576A17AC91F000A55332 /* MainStoryboard.storyboard */,
 				A4A046F717CB9E4C00391B43 /* HomeView */,
-				A4D3667917BBB6B400D42D9D /* ArtistViewController.h */,
-				A4D3667A17BBB6B400D42D9D /* ArtistViewController.m */,
-				A4D3668517BBB7BF00D42D9D /* ArtistCell.h */,
-				A4D3668617BBB7BF00D42D9D /* ArtistCell.m */,
+				897A342B17DA59BE009D7E3E /* Artist List */,
 				A4D3667C17BBB6C900D42D9D /* ArtistDetailViewController.h */,
 				A4D3667D17BBB6C900D42D9D /* ArtistDetailViewController.m */,
 				A4D3667F17BBB6F100D42D9D /* MapViewController.h */,
@@ -186,12 +218,14 @@
 		A42F575917AC91F000A55332 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A4A818E717CE3CD100A7E5C4 /* navBarBG@2px.png */,
-				A4A818E817CE3CD100A7E5C4 /* navBarBG.png */,
+				89AEF48B17D9562000A3046E /* navBarBG.png */,
+				89AEF48C17D9562000A3046E /* navBarBG@2px.png */,
 				A4A818F317CE501D00A7E5C4 /* navBarBack-Selected@2px.png */,
 				A4A818F417CE501D00A7E5C4 /* navBarBack-Selected.png */,
 				A4A818F517CE501D00A7E5C4 /* navBarBack@2px.png */,
 				A4A818F617CE501D00A7E5C4 /* navBarBack.png */,
+				897A342417DA3C00009D7E3E /* AnnotationPin.png */,
+				897A342517DA3C00009D7E3E /* AnnotationPin@2px.png */,
 				A47B86FD17C1D61700018880 /* artistData.json */,
 				A4D366D917BFC82900D42D9D /* Oswald-Regular.otf */,
 				A48927E817C3F730002FD30C /* Podkova-Regular.ttf */,
@@ -252,9 +286,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A42F577217AC91F100A55332 /* Build configuration list for PBXNativeTarget "RavenswoodArtWalk" */;
 			buildPhases = (
+				CD1DD6A326A648659A61D9F1 /* Check Pods Manifest.lock */,
 				A42F574B17AC91F000A55332 /* Sources */,
 				A42F574C17AC91F000A55332 /* Frameworks */,
 				A42F574D17AC91F000A55332 /* Resources */,
+				5EAB8A39CC1D4BE39E3817AC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -310,16 +346,51 @@
 				A4D366E117C03F8D00D42D9D /* ArtistTableCell@2px.png in Resources */,
 				A4D366E217C03F8D00D42D9D /* ArtistTableCell.png in Resources */,
 				A47B86FE17C1D61700018880 /* artistData.json in Resources */,
-				A4A818EB17CE3CD100A7E5C4 /* navBarBG@2px.png in Resources */,
-				A4A818EC17CE3CD100A7E5C4 /* navBarBG.png in Resources */,
 				A4A818F717CE501D00A7E5C4 /* navBarBack-Selected@2px.png in Resources */,
 				A4A818F817CE501D00A7E5C4 /* navBarBack-Selected.png in Resources */,
 				A4A818F917CE501D00A7E5C4 /* navBarBack@2px.png in Resources */,
 				A4A818FA17CE501D00A7E5C4 /* navBarBack.png in Resources */,
+				89AEF48D17D9562000A3046E /* navBarBG.png in Resources */,
+				89AEF48E17D9562000A3046E /* navBarBG@2px.png in Resources */,
+				897A342617DA3C00009D7E3E /* AnnotationPin.png in Resources */,
+				897A342717DA3C00009D7E3E /* AnnotationPin@2px.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5EAB8A39CC1D4BE39E3817AC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD1DD6A326A648659A61D9F1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A42F574B17AC91F000A55332 /* Sources */ = {
@@ -340,6 +411,8 @@
 				A4A046F317CB9E2700391B43 /* ArtistAnnotationView.m in Sources */,
 				A4A046F617CB9E3B00391B43 /* ArtistAnnotation.m in Sources */,
 				89A41F5F17D0E5B50031C9C6 /* Artist.m in Sources */,
+				89AEF48217D8F82700A3046E /* GoogleCoordsAPIClient.m in Sources */,
+				897A342E17DA5BDF009D7E3E /* FavoritesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +496,7 @@
 		};
 		A42F577317AC91F100A55332 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A369585413F745CF87EF431E /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RavenswoodArtWalk/RavenswoodArtWalk-Prefix.pch";
@@ -434,6 +508,7 @@
 		};
 		A42F577417AC91F100A55332 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A369585413F745CF87EF431E /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RavenswoodArtWalk/RavenswoodArtWalk-Prefix.pch";

@@ -46,8 +46,8 @@
     
     self.managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
     
-    self.navigationController.navigationItem.title = self.selectedArtist.studioName;
-    
+    self.navigationItem.title=self.selectedArtist.studioName;
+
     [self loadImage];
     [self createImageFrame];
     [self populateSummary];
@@ -64,15 +64,27 @@
 
 -(void)populateSummary
 {
-    UIFont *oswald = [UIFont fontWithName:@"Oswald" size:self.artistDetailLabel.font.pointSize];
+    UIFont *oswald = [UIFont fontWithName:@"Oswald" size:self.blurbTextView.font.pointSize];
     self.artistDetailLabel.font = oswald;
     
     self.studioNameLabel.text = self.selectedArtist.studioName;
     
-    UIFont *podkova = [UIFont fontWithName:@"Podkova" size:self.blurbLabel.font.pointSize];
-    self.blurbLabel.font = podkova;
-    self.blurbLabel.text = self.selectedArtist.blurb;
+    UIFont *podkova = [UIFont fontWithName:@"Podkova" size:self.blurbTextView.font.pointSize];
+   // self.blurbLabel.font = podkova;
+   // self.blurbLabel.text = self.selectedArtist.blurb;
+    self.blurbTextView.font = podkova;
+    self.blurbTextView.text = self.selectedArtist.blurb;
+    NSString *text = self.selectedArtist.blurb;
+    CGRect originalFrame = self.blurbTextView.frame;
+    CGSize originalTextSize = self.blurbTextView.contentSize;
+    NSLog(@"content height %f",originalTextSize.height);
+    float lineCount = originalTextSize.height/18.0;
+    CGSize frameSize = [text sizeWithFont:podkova forWidth:280.0 lineBreakMode:NSLineBreakByWordWrapping];
+    self.blurbTextView.frame = CGRectMake(CGRectGetMinX(originalFrame), CGRectGetMinY(originalFrame), CGRectGetWidth(originalFrame), frameSize.height*lineCount);
     
+    self.favoriteButtonOutlet.frame = CGRectMake(20,(self.blurbTextView.frame.origin.y + self.blurbTextView.frame.size.height +10), self.favoriteButtonOutlet.frame.size.width, self.favoriteButtonOutlet.frame.size.height);
+    self.visitWebsiteButtonOutlet.frame = CGRectMake(20,(self.favoriteButtonOutlet.frame.origin.y + self.favoriteButtonOutlet.frame.size.height +10), self.visitWebsiteButtonOutlet.frame.size.width, self.visitWebsiteButtonOutlet.frame.size.height);
+    self.contactArtistButtonOutlet.frame = CGRectMake(20,(self.visitWebsiteButtonOutlet.frame.origin.y + self.visitWebsiteButtonOutlet.frame.size.height +10), self.contactArtistButtonOutlet.frame.size.width, self.contactArtistButtonOutlet.frame.size.height);
     }
 
 -(void)loadImage
@@ -166,21 +178,24 @@
    }
     if (self.selectedArtist.email == nil)
     {
-        self.contactArtistButtonOutlet.titleLabel.text= @"No e-mail address available for this artist";
+        [self.contactArtistButtonOutlet setTitle:@"No e-mail address available for this artist" forState:UIControlStateNormal];
+        //self.contactArtistButtonOutlet.titleLabel.text= @"No e-mail address available for this artist";
         [self.contactArtistButtonOutlet setUserInteractionEnabled:NO];
         self.contactArtistButtonOutlet.alpha = .5;
     }
     else
     {
-        self.contactArtistButtonOutlet.titleLabel.text= @"Contact Artist";
+         [self.contactArtistButtonOutlet setTitle: @"Contact Artist" forState:UIControlStateNormal];
     }
-    if (self.selectedArtist.favorite == nil)
+    if (self.selectedArtist.favorite == [NSNumber numberWithInt:1])
     {
-        self.favoriteButtonOutlet.titleLabel.text= @"Mark this artist as a favorite";
+        [self.favoriteButtonOutlet setTitle:@"Remove from favorites" forState:UIControlStateNormal];
+        
     }
     else
     {
-        self.favoriteButtonOutlet.titleLabel.text= @"Remove from Favorites";
+        [self.favoriteButtonOutlet setTitle:@"Add to favorites" forState:UIControlStateNormal];
+        
     }
 }
 //if the artist.website =nil, then set the alpha to .5 and change the message and disable clicking.  if in favorites, make sure selected already
@@ -200,25 +215,29 @@
 }
 - (IBAction)favoriteButton:(id)sender {
     
-    if (self.selectedArtist.favorite == nil)
-    {
-        self.selectedArtist.favorite = [NSNumber numberWithBool:YES];
-        
-        NSError *error = nil;
-        if (![self.managedObjectContext save:&error]) {
-            
-            NSLog(@"An error occured: %@", error);
-        }    }
-    else
+    if (self.selectedArtist.favorite == [NSNumber numberWithInt:1])
     {
         self.selectedArtist.favorite = [NSNumber numberWithBool:NO];
+        [self.favoriteButtonOutlet setTitle:@"Removed from favorites" forState:UIControlStateNormal];
         
         NSError *error = nil;
         if (![self.managedObjectContext save:&error]) {
             
             NSLog(@"An error occured: %@", error);
-        }    }
+        }
     
-
     }
+    else
+    {
+        
+     self.selectedArtist.favorite = [NSNumber numberWithBool:YES];
+        [self.favoriteButtonOutlet setTitle:@"Added to favorites" forState:UIControlStateNormal];
+        
+        NSError *error = nil;
+        if (![self.managedObjectContext save:&error]) {
+            
+            NSLog(@"An error occured: %@", error);
+        }    
+    }
+}
 @end

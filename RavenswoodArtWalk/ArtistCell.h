@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ArtistCell : UITableViewCell
+
 @property (strong, nonatomic) IBOutlet UILabel *studioNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *mediumLabel;
 

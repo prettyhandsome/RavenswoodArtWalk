@@ -10,4 +10,20 @@
 
 @implementation ArtistAnnotation
 
+@synthesize     coordinate;
+@synthesize     title;
+@synthesize     subtitle;
+@synthesize     objectID;
+
++(ArtistAnnotation*)initWithCoordinate:(CLLocationCoordinate2D)coordinate title:(NSString*)title subtitle:(NSString*)subtitle andObjectID:(NSManagedObjectID*)objectID
+{
+    ArtistAnnotation *artistAnnotation = [[ArtistAnnotation alloc] init];
+    artistAnnotation.coordinate = coordinate;
+    artistAnnotation.title = title;
+    artistAnnotation.subtitle = subtitle;
+    artistAnnotation.objectID = objectID;
+    
+    return artistAnnotation;
+}
 @end
+

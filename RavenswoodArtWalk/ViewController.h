@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreData/CoreData.h>
-#import "ArtistAnnotation.h"
 
 @interface ViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *favoritesLabel;

@@ -26,7 +26,7 @@
 - (IBAction)contactArtistButton:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *favoriteButtonOutlet;
 - (IBAction)favoriteButton:(id)sender;
-
+@property (strong, nonatomic) IBOutlet UITextView *blurbTextView;
 
 @property (strong, nonatomic) IBOutlet MKMapView *artistLocation;
 
